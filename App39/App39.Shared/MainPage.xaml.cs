@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -86,6 +88,18 @@ namespace App39
             "Mileage Plan number",
             "Unknown"
         };
+
+        private async void TapHandler(object sender, TappedRoutedEventArgs args)
+        {
+            var url = "https://raw.githubusercontent.com/CommunityToolkit/WindowsCommunityToolkit/rel/7.1.0/Microsoft.Toolkit.Uwp.SampleApp/Assets/Photos/LunchBreak.jpg";
+            var rass = RandomAccessStreamReference.CreateFromUri(new Uri(url));
+            using (IRandomAccessStream stream = await rass.OpenReadAsync())
+            {
+                var bitmapImage = new BitmapImage();
+                bitmapImage.SetSource(stream);
+                ImageExControl3.Source = bitmapImage;
+            }
+        }
 
         public List<Email> Emails { get; } = 
         new List<Email>

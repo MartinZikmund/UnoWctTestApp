@@ -8,37 +8,46 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
     mc:Ignorable="d">
-    <StackPanel Padding="20" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="Lookup" ItemsSource="{Binding LookupItems}">
-        </ComboBox>
-        <controls:SwitchPresenter Value="{Binding SelectedItem, ElementName=Lookup}">
-            <controls:Case Value="Confirmation Code">
-                <StackPanel>
-                    <TextBox Name="ConfirmationCodeValidator"
-                   ui:TextBoxExtensions.Regex="^[a-zA-Z]{6}$"
-                   Header="Confirmation code"
-                   PlaceholderText="6 letters" />
-                    <TextBlock Visibility="{Binding (ui:TextBoxExtensions.IsValid), ElementName=ConfirmationCodeValidator}" Text="Thanks for entering a valid code!" />
-                </StackPanel>
-            </controls:Case>
-            <controls:Case Value="E-ticket number">
-                <StackPanel>
-                    <TextBox Name="TicketValidator"
-                   ui:TextBoxExtensions.Regex="(^\d{10}$)|(^\d{13}$)"
-                   Header="E-ticket number"
-                   PlaceholderText="10 or 13 numbers" />
-                    <TextBlock Visibility="{Binding (ui:TextBoxExtensions.IsValid), ElementName=TicketValidator}" Text="Thanks for entering a valid code!" />
-                </StackPanel>
-            </controls:Case>
-            <controls:Case Value="Mileage Plan number">
-                <TextBox Name="PlanValidator"
-                 Header="Mileage Plan #"
-                 PlaceholderText="Mileage Plan #" />
-            </controls:Case>
-            <!-- You can also provide a default case if no match is found -->
-            <controls:Case IsDefault="True">
-                <TextBlock Text="Please select a way to lookup your reservation above..." />
-            </controls:Case>
-        </controls:SwitchPresenter>
-    </StackPanel>
+    <Page.Resources>
+        <Style x:Key="BaseStyle" TargetType="controls:ImageEx">
+            <Setter Property="IsCacheEnabled" Value="True" />
+            <Setter Property="Stretch" Value="UniformToFill" />
+            <Setter Property="PlaceholderStretch" Value="UniformToFill" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="300" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="Red">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      VerticalScrollMode="Auto">
+            <StackPanel x:Name="Container"
+                        Orientation="Vertical">
+                <controls:ImageEx x:Name="ImageExControl1"
+                                  IsCacheEnabled="True"
+                                  Source="/Assets/Photos/LunchBreak.jpg"
+                                  PlaceholderSource="/Assets/People/dave.png"
+                                  Style="{StaticResource BaseStyle}"/>
+
+                <controls:ImageEx x:Name="ImageExControl2"
+                                  IsCacheEnabled="True"
+                                  Source="/Assets/Photos/LunchBreak.jpg"
+                                  PlaceholderSource="/Assets/People/dave.png"
+                                  CornerRadius="30,60,30,60"
+                                  Style="{StaticResource BaseStyle}"
+                                  Tapped="TapHandler"/>
+
+                <controls:ImageEx x:Name="ImageExControl3"
+                                  CornerRadius="999"
+                                  IsCacheEnabled="True"
+                                  PlaceholderSource="/Assets/People/dave.png"
+                                  Style="{StaticResource BaseStyle}"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Border x:Name="LazyLoadingControlHost" />
+    </Grid>
 </Page>

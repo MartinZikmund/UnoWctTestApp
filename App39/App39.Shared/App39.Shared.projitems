@@ -35,6 +35,7 @@
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Photos\LunchBreak.jpg" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\People\dave.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\People\david.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\People\dolphin.jpg" />
@@ -49,5 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\People\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\Photos\" />
   </ItemGroup>
 </Project>
