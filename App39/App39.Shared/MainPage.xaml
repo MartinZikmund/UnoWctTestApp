@@ -23,31 +23,8 @@
     </Page.Resources>
 
     <Grid Background="Red">
-        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                      VerticalScrollMode="Auto">
-            <StackPanel x:Name="Container"
-                        Orientation="Vertical">
-                <controls:ImageEx x:Name="ImageExControl1"
-                                  IsCacheEnabled="True"
-                                  Source="/Assets/Photos/LunchBreak.jpg"
-                                  PlaceholderSource="/Assets/People/dave.png"
-                                  Style="{StaticResource BaseStyle}"/>
-
-                <controls:ImageEx x:Name="ImageExControl2"
-                                  IsCacheEnabled="True"
-                                  Source="/Assets/Photos/LunchBreak.jpg"
-                                  PlaceholderSource="/Assets/People/dave.png"
-                                  CornerRadius="30,60,30,60"
-                                  Style="{StaticResource BaseStyle}"
-                                  Tapped="TapHandler"/>
-
-                <controls:ImageEx x:Name="ImageExControl3"
-                                  CornerRadius="999"
-                                  IsCacheEnabled="True"
-                                  PlaceholderSource="/Assets/People/dave.png"
-                                  Style="{StaticResource BaseStyle}"/>
-            </StackPanel>
-        </ScrollViewer>
-        <Border x:Name="LazyLoadingControlHost" />
+        <controls:ImageCropper x:Name="ImageCropper"
+                           CropShape="Rectangular"
+                           ThumbPlacement="All"/>
     </Grid>
 </Page>
