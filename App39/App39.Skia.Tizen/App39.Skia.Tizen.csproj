@@ -20,23 +20,23 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="SkiaSharp.Views" Version="2.80.2" />
-    <PackageReference Include="Uno.Microsoft.Toolkit" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.Connectivity" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.DeveloperTools" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Animations" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Core" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Input" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Layout" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Markdown" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Media" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Primitives" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Media" Version="7.1.0-build.43.g15261a775c" />
-    <PackageReference Include="Uno.UI.Skia.Tizen" Version="3.11.0-dev.286" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.11.0-dev.286" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.Microsoft.Toolkit" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.Connectivity" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.DeveloperTools" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Animations" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Core" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Input" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Layout" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Markdown" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Media" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.Primitives" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Media" Version="7.1.0-build.45.gd2e4192c8c" />
+    <PackageReference Include="Uno.UI.Skia.Tizen" Version="3.11.0-dev.310" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.11.0-dev.310" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\App39.Shared\App39.Shared.projitems" Label="Shared" />
 </Project>
