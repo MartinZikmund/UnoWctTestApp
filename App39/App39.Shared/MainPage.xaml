@@ -8,92 +8,37 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
     mc:Ignorable="d">
-    <Grid Padding="5" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <controls:ListDetailsView BackButtonBehavior="Automatic"
-                                    ItemsSource="{Binding Emails}"
-                                    NoSelectionContent="Select an item to view"
-                                    CompactModeThresholdWidth="720">
-            <controls:ListDetailsView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="0,8">
-                        <TextBlock Text="{Binding From}"
-                                   Style="{StaticResource SubtitleTextBlockStyle}"/>
-                        <TextBlock Text="{Binding Subject}"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   Foreground="Red"
-                                   MaxLines="1"/>
-                        <TextBlock Text="{Binding Body}"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   Opacity=".6"
-                                   MaxLines="1"/>
-                    </StackPanel>
-                </DataTemplate>
-            </controls:ListDetailsView.ItemTemplate>
-            <controls:ListDetailsView.DetailsTemplate>
-                <DataTemplate>
-                    <RelativePanel Margin="24">
-                        <controls:ImageEx x:Name="FromEllipse"
-                                               Source="{Binding Thumbnail}"
-                                               Width="50"
-                                               Height="50"
-                                               CornerRadius="999"/>
-                        <TextBlock Text="{Binding From}"
-                                   Style="{StaticResource SubtitleTextBlockStyle}"
-                                   RelativePanel.RightOf="FromEllipse"
-                                   Margin="12,-6,0,0"/>
-                        <TextBlock x:Name="SubjectLine"
-                                   Text="{Binding Subject}"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   RelativePanel.Below="FromEllipse"
-                                   Margin="0,12,0,0"/>
-                        <TextBlock x:Name="Body"
-                                   Text="{Binding Body}"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   TextWrapping="Wrap"
-                                   RelativePanel.Below="SubjectLine"
-                                   Margin="0,12,0,0"/>
-                    </RelativePanel>
-                </DataTemplate>
-            </controls:ListDetailsView.DetailsTemplate>
-            <controls:ListDetailsView.NoSelectionContentTemplate>
-                <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center"
-                                VerticalAlignment="Center">
-                        <SymbolIcon Symbol="Mail"
-                                    RenderTransformOrigin=".5,.5">
-                            <SymbolIcon.RenderTransform>
-                                <CompositeTransform
-                                  ScaleX="2"
-                                  ScaleY="2"/>
-                            </SymbolIcon.RenderTransform>
-                        </SymbolIcon>
-                        <TextBlock Text="{Binding}"
-                                   FontSize="24"
-                                   Margin="0,12"/>
-                    </StackPanel>
-                </DataTemplate>
-            </controls:ListDetailsView.NoSelectionContentTemplate>
-            <controls:ListDetailsView.ListCommandBar>
-                <CommandBar>
-                    <!-- Button functionality to be implemented by developer -->
-                    <AppBarButton Icon="Back" Label="Back"/>
-                    <AppBarButton Icon="Forward" Label="Forward"/>
-                    <CommandBar.Content>
-                        <TextBlock Margin="12,14">
-                      <Run Text="{Binding Emails.Count}" />
-                      <Run Text="Items" />
-                        </TextBlock>
-                    </CommandBar.Content>
-                </CommandBar>
-            </controls:ListDetailsView.ListCommandBar>
-            <controls:ListDetailsView.DetailsCommandBar>
-                <CommandBar>
-                    <!-- Button functionality to be implemented by developer -->
-                    <AppBarButton Icon="MailReply" Label="Reply" />
-                    <AppBarButton Icon="MailReplyAll" Label="Reply All" />
-                    <AppBarButton Icon="MailForward" Label="Forward" />
-                </CommandBar>
-            </controls:ListDetailsView.DetailsCommandBar>
-        </controls:ListDetailsView>
-    </Grid>
+    <StackPanel Padding="20" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ComboBox x:Name="Lookup" ItemsSource="{Binding LookupItems}">
+        </ComboBox>
+        <controls:SwitchPresenter Value="{Binding SelectedItem, ElementName=Lookup}">
+            <controls:Case Value="Confirmation Code">
+                <StackPanel>
+                    <TextBox Name="ConfirmationCodeValidator"
+                   ui:TextBoxExtensions.Regex="^[a-zA-Z]{6}$"
+                   Header="Confirmation code"
+                   PlaceholderText="6 letters" />
+                    <TextBlock Visibility="{Binding (ui:TextBoxExtensions.IsValid), ElementName=ConfirmationCodeValidator}" Text="Thanks for entering a valid code!" />
+                </StackPanel>
+            </controls:Case>
+            <controls:Case Value="E-ticket number">
+                <StackPanel>
+                    <TextBox Name="TicketValidator"
+                   ui:TextBoxExtensions.Regex="(^\d{10}$)|(^\d{13}$)"
+                   Header="E-ticket number"
+                   PlaceholderText="10 or 13 numbers" />
+                    <TextBlock Visibility="{Binding (ui:TextBoxExtensions.IsValid), ElementName=TicketValidator}" Text="Thanks for entering a valid code!" />
+                </StackPanel>
+            </controls:Case>
+            <controls:Case Value="Mileage Plan number">
+                <TextBox Name="PlanValidator"
+                 Header="Mileage Plan #"
+                 PlaceholderText="Mileage Plan #" />
+            </controls:Case>
+            <!-- You can also provide a default case if no match is found -->
+            <controls:Case IsDefault="True">
+                <TextBlock Text="Please select a way to lookup your reservation above..." />
+            </controls:Case>
+        </controls:SwitchPresenter>
+    </StackPanel>
 </Page>

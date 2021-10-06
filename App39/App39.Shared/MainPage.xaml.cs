@@ -79,6 +79,14 @@ namespace App39
             public string Body { get; set; }
         }
 
+        public string[] LookupItems { get; } = new string[]
+        {
+            "Confirmation Code",
+            "E-ticket number",
+            "Mileage Plan number",
+            "Unknown"
+        };
+
         public List<Email> Emails { get; } = 
         new List<Email>
 {
