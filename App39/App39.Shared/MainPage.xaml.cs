@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,6 +29,16 @@ namespace App39
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        public PhotoDataItem[] Pictures { get; set; } = new PhotoDataItem[]
+            {
+                new PhotoDataItem() {Title="A", Thumbnail = "ms-appx:///Assets/People/dave.png"},
+                new PhotoDataItem() {Title="B", Thumbnail = "ms-appx:///Assets/People/david.png"},
+                new PhotoDataItem() {Title="D", Thumbnail = "ms-appx:///Assets/People/dolphin.jpg"},
+                new PhotoDataItem() {Title="G", Thumbnail = "ms-appx:///Assets/People/giorgio.png"},
+
+            };
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -38,7 +49,20 @@ namespace App39
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+        }
 
+        public class PhotoDataItem
+        {
+            public string Title { get; set; }
+
+            public string Category { get; set; }
+
+            public string Thumbnail { get; set; }
+
+            public override string ToString()
+            {
+                return Title;
+            }
         }
     }
 }
