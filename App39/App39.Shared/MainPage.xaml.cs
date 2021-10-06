@@ -38,13 +38,7 @@ namespace App39
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            await Task.Delay(1000);
 
-            if (ImageCropper != null)
-            {
-                var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Photos/LunchBreak.jpg"));
-                await ImageCropper.LoadImageFromFile(file);
-            }
         }
     }
 }
