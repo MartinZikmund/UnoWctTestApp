@@ -10,8 +10,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <controls:TokenizingTextBox    
-    PlaceholderText="Add Tags"
-    TokenDelimiter=","/>
+        <WebView
+    ui:WebViewExtensions.Content="{x:Bind TestHtml}" />
     </Grid>
 </Page>
