@@ -7,10 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    ui:ApplicationViewExtensions.Title="View Extensions"
+      ui:ApplicationViewExtensions.ExtendViewIntoTitleBar="True"
+      ui:TitleBarExtensions.BackgroundColor="Red"
+      ui:TitleBarExtensions.ButtonBackgroundColor="Orange"
+      ui:TitleBarExtensions.ButtonForegroundColor="Black"
+      ui:TitleBarExtensions.ButtonHoverBackgroundColor="DarkOrange"
+      ui:TitleBarExtensions.ButtonHoverForegroundColor="Gray"
+      ui:TitleBarExtensions.ButtonPressedForegroundColor="DarkGray"
     mc:Ignorable="d">
 
     <Grid>
-        <WebView
-    ui:WebViewExtensions.Content="{x:Bind TestHtml}" />
     </Grid>
 </Page>
