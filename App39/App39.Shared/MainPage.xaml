@@ -7,16 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
-    ui:ApplicationViewExtensions.Title="View Extensions"
-      ui:ApplicationViewExtensions.ExtendViewIntoTitleBar="True"
-      ui:TitleBarExtensions.BackgroundColor="Red"
-      ui:TitleBarExtensions.ButtonBackgroundColor="Orange"
-      ui:TitleBarExtensions.ButtonForegroundColor="Black"
-      ui:TitleBarExtensions.ButtonHoverBackgroundColor="DarkOrange"
-      ui:TitleBarExtensions.ButtonHoverForegroundColor="Gray"
-      ui:TitleBarExtensions.ButtonPressedForegroundColor="DarkGray"
     mc:Ignorable="d">
 
     <Grid>
+        <Grid
+    BorderBrush="White"
+    BorderThickness="1"
+    Width="148"
+    Height="148"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    ui:UIElementExtensions.ClipToBounds="True">
+            <!-- We translate the inner rectangles outside of the bounds of the container. -->
+            <Rectangle Fill="Blue" Width="100" Height="100">
+                <Rectangle.RenderTransform>
+                    <TranslateTransform X="-50" Y="-50" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="Green" Width="100" Height="100">
+                <Rectangle.RenderTransform>
+                    <TranslateTransform X="50" Y="50" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
     </Grid>
 </Page>
